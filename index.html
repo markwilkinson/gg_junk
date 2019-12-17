@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.label{
+	font-size:12.5px;
+	fill:#ffffff;
+	text-anchor:middle;
+	alignment-baseline:middle;
+}
+.face{
+	stroke:#c8c8c8;
+	stroke-width:2;
+}
+.minorTicks{
+	stroke-width:2;
+	stroke:white;
+}
+.majorTicks{
+	stroke:white;
+	stroke-width:3;
+}
+
+</style>
+<body>
+<svg id="fz" width="200" height="200"></svg>
+<svg id="az" width="200" height="200"></svg><br/>
+<svg id="iz" width="200" height="200"></svg>
+<svg id="rz" width="200" height="200"></svg><br/>
+<svg id="all" width="400" height="400"></svg>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
+<script>
+  function mid(d){ return 0.5*(d[1]+d[0])}
+	
+  var svg1=d3.select("#fz");
+  var svg2=d3.select("#az");
+  var svg3=d3.select("#iz");
+  var svg4=d3.select("#rz");
+  var svgall=d3.select("#all");
+
+  var fframe=svg1.append("g").attr("transform","translate(100, 100)");
+  var aframe=svg2.append("g").attr("transform","translate(100, 100)");
+  var iframe=svg3.append("g").attr("transform","translate(100, 100)");
+  var rframe=svg4.append("g").attr("transform","translate(100, 100)");
+  var allframe=svgall.append("g").attr("transform","translate(200, 200)");
+  var frange = [0,100];
+  var arange = [-20,20];
+  var irange = [0,7];
+  var rrange = [0,3];
+  var allrange = [0,22];
+  
+  var fguage = viz.gg()
+	.domain(frange)
+	.outerRadius(100)
+	.innerRadius(20)
+	.value(0.5*(frange[1]+frange[0]))
+	//.duration(1000)
+	.faceColor("#aa3CEC")
+	.innerFaceColor("#bb3CEC")
+	.needleColor("#fff")
+	.minorTickStart(0.9)
+	.majorTickStart(0.85)
+	.labelLocation(0.78)
+;
+
+  var aguage = viz.gg()
+	.domain(arange)
+	.outerRadius(100)
+	.innerRadius(20)
+	.ticks(d3.range(arange[0], arange[1]+1,5))
+	.majorTicks(function(d){return (d)%10===0;})
+	.value(mid(arange)+5)
+	//.duration(1000)
+	.faceColor("#003C00")
+	.innerFaceColor("#000000")
+	.needleColor("#fff")
+	.minorTickStart(0.9)
+	.majorTickStart(0.85)
+	.angleOffset(Math.PI/2)
+	.labelLocation(0.68)
+;
+  var iguage = viz.gg()
+	.domain(irange)
+	.outerRadius(100)
+	.innerRadius(20)
+	.value(0.5*(irange[1]+irange[0]))
+	//.duration(1000)
+	.faceColor("#00FFEC")
+	.innerFaceColor("#00EEEC")
+	.needleColor("#fff")
+	//.minorTickStart(0.9)
+	.majorTickStart(0.85)
+	.labelLocation(0.78)
+;
+  var rguage = viz.gg()
+	.domain(rrange)
+	.outerRadius(100)
+	.innerRadius(20)
+	.value(0.5*(rrange[1]+rrange[0]))
+	//.duration(1000)
+	.faceColor("#00CC33")
+	.innerFaceColor("#00CC33")
+	.needleColor("#fff")
+	//.minorTickStart(0.9)
+	.majorTickStart(0.85)
+	.labelLocation(0.78)
+;
+  var allguage = viz.gg()
+	.domain(allrange)
+	.outerRadius(100)
+	.innerRadius(20)
+	.value(0.5*(allrange[1]+allrange[0]))
+	//.duration(1000)
+	.faceColor("#003CEC")
+	.innerFaceColor("#000000")
+	.needleColor("#fff")
+	//.minorTickStart(0.9)
+	.majorTickStart(0.85)
+	.labelLocation(0.78)
+;
+  
+  fguage.defs(svg1, 1);
+  aguage.defs(svg2, 2);
+  iguage.defs(svg3, 3);
+  rguage.defs(svg4, 4);
+  allguage.defs(svgall, 5);
+  fframe.call(fguage);  
+  aframe.call(aguage);  
+  iframe.call(iguage);  
+  rframe.call(rguage);  
+  allframe.call(allguage);  
+  
+  d3.select(self.frameElement).style("height", "2000px");
+  //setInterval( function(){gg.setNeedle(domain[0]+Math.random()*(domain[1]-domain[0]));},2000);
+</script>
+</body>
+</html>
