@@ -28,7 +28,7 @@ module Viz
 		  @domain= args.fetch(:domain, [0,100])
 		  @outerRadius= args.fetch(:outerRadius, "100")
 		  @innerRadius= args.fetch(:innerRadius, "20")
-		  @ticks= args.fetch(:ticks, [domain, "5"].flatten)
+		  @ticks= args.fetch(:ticks, [domain[0], domain[1]+1, "5"])
 		  @majorTicks = args.fetch(:majorTicks, "function(d){return (d)%10===0;}")
 		  @value= args.fetch(:value, domain[0]+(domain[1] - domain[0])/2)
 		  #.duration(1000)
@@ -87,11 +87,14 @@ frame#{self.number}.call(guage#{self.number});
 </script>
 
 END
+
 		return htmlout
+
 	  end
 	  
 	  
 	  def defaultStylesheet
+		
 		style = <<END
 <style>
 .label{
@@ -117,6 +120,11 @@ END
 
 END
 		return style
-	end
-end
+	  end
+	  
+	  
+	  
+	end  # end of class
+end # end of module
+
 	
