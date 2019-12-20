@@ -38,8 +38,8 @@ resj.keys.each do |uri|
 end
 
 ggf = Viz::GG.new({domain: [0,fs], ticks: [0, fs+1, 1], majorTicks: "function(d){return true;}", value: fscores})
-gga = Viz::GG.new({domain: [0,as], ticks: [0, fs+1, 1],  majorTicks: "function(d){return true;}", value: ascores})
-ggi = Viz::GG.new({domain: [0,is], ticks: [0, fs+1, 1],  majorTicks: "function(d){return true;}", value: iscores})
-ggr = Viz::GG.new({domain: [0,rs], ticks: [0, fs+1, 1],  majorTicks: "function(d){return true;}", value: rscores})
+gga = Viz::GG.new({domain: [0,as], ticks: [0, as+1, 1],  majorTicks: "function(d){return true;}", value: ascores})
+ggi = Viz::GG.new({domain: [0,is], ticks: [0, is+1, 1],  majorTicks: "function(d){return true;}", value: iscores})
+ggr = Viz::GG.new({domain: [0,rs], ticks: [0, rs+1, 1],  majorTicks: "function(d){return true;}", value: rscores})
 
 File.write("output.html", "<html>" + ggf.defaultStylesheet + "<body>" + ggf.render + gga.render + ggi.render + ggr.render + "</body></html>")

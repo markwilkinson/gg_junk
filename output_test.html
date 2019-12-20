@@ -22,6 +22,7 @@
 
 <body><svg id="svg1" width="200" height="200"></svg>
 
+<!--
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
 <script>
@@ -49,6 +50,8 @@ guage1.defs(svg1, 1);
 frame1.call(guage1);  
 </script>
 
+-->
+ 
 <svg id="svg2" width="200" height="200"></svg>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -62,7 +65,7 @@ var guage2 = viz.gg()
   .domain(range2)
   .outerRadius(100)
   .innerRadius(20)
-  .ticks(d3.range(0,6,1))
+  .ticks(d3.range(0,9,1))
   .majorTicks(function(d){return true;})
   .value(2)
   //.duration(1000)
@@ -78,6 +81,9 @@ guage2.defs(svg2, 2);
 frame2.call(guage2);  
 </script>
 
+
+<!--
+
 <svg id="svg3" width="200" height="200"></svg>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -91,7 +97,7 @@ var guage3 = viz.gg()
   .domain(range3)
   .outerRadius(100)
   .innerRadius(20)
-  .ticks(d3.range(0,8,1))
+  .ticks(d3.range(0,9,1))
   .majorTicks(function(d){return true;})
   .value(5)
   //.duration(1000)
@@ -120,7 +126,7 @@ var guage4 = viz.gg()
   .domain(range4)
   .outerRadius(100)
   .innerRadius(20)
-  .ticks(d3.range(0,3,1))
+  .ticks(d3.range(0,9,1))
   .majorTicks(function(d){return true;})
   .value(2)
   //.duration(1000)
@@ -135,5 +141,6 @@ var guage4 = viz.gg()
 guage4.defs(svg4, 4);
 frame4.call(guage4);  
 </script>
+-->
 
 </body></html>
