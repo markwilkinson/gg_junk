@@ -20,10 +20,10 @@
 
 </style>
 
-<body><div id="divsvg1>
+<body><div id="divsvg1" style="width: 202px; float: left">
 
-<svg id="svg1" width="200" height="200"></svg><br/>
-<p style="text-align: center;">F Metrics</p>
+<svg  id="svg1" width="200" height="200"></svg><br/>
+<p style="font-size: 18px;text-align: center;">F Metrics</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
@@ -52,10 +52,10 @@ guage1.defs(svg1, 1);
 frame1.call(guage1);  
 </script>
 </div>
-<div id="divsvg2>
+<div id="divsvg2" style="width: 202px; float: left">
 
-<svg id="svg2" width="200" height="200"></svg><br/>
-<p style="text-align: center;">A Metrics</p>
+<svg  id="svg2" width="200" height="200"></svg><br/>
+<p style="font-size: 18px;text-align: center;">A Metrics</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
@@ -70,7 +70,7 @@ var guage2 = viz.gg()
   .innerRadius(20)
   .ticks(d3.range(0,6,1))
   .majorTicks(function(d){return true;})
-  .value(4)
+  .value(2)
   //.duration(1000)
   .faceColor("#003CCC")
   .innerFaceColor("#003CFF")
@@ -84,10 +84,10 @@ guage2.defs(svg2, 2);
 frame2.call(guage2);  
 </script>
 </div>
-<div id="divsvg3>
+<div id="divsvg3" style="width: 202px; float: left">
 
-<svg id="svg3" width="200" height="200"></svg><br/>
-<p style="text-align: center;">I Metrics</p>
+<svg  id="svg3" width="200" height="200"></svg><br/>
+<p style="font-size: 18px;text-align: center;">I Metrics</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
@@ -116,10 +116,10 @@ guage3.defs(svg3, 3);
 frame3.call(guage3);  
 </script>
 </div>
-<div id="divsvg4>
+<div id="divsvg4" style="width: 202px; float: left">
 
-<svg id="svg4" width="200" height="200"></svg><br/>
-<p style="text-align: center;">R Metrics</p>
+<svg  id="svg4" width="200" height="200"></svg><br/>
+<p style="font-size: 18px;text-align: center;">R Metrics</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
@@ -134,7 +134,7 @@ var guage4 = viz.gg()
   .innerRadius(20)
   .ticks(d3.range(0,3,1))
   .majorTicks(function(d){return true;})
-  .value(0)
+  .value(2)
   //.duration(1000)
   .faceColor("#003CCC")
   .innerFaceColor("#003CFF")

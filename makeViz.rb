@@ -44,4 +44,4 @@ gga = Viz::GG.new({domain: [0,as], ticks: [0, as+1, 1],  majorTicks: "function(d
 ggi = Viz::GG.new({domain: [0,is], ticks: [0, is+1, 1],  majorTicks: "function(d){return true;}", value: iscores, guagelabel: "I Metrics"})
 ggr = Viz::GG.new({domain: [0,rs], ticks: [0, rs+1, 1],  majorTicks: "function(d){return true;}", value: rscores, guagelabel: "R Metrics"})
 
-File.write("/var/www/html/output.html", "<html>" + ggf.defaultStylesheet + "<body>" + ggf.render + gga.render + ggi.render + ggr.render + "</body></html>")
+File.write("/var/www/html/viz/gg_junk/output.html", "<html>" + ggf.defaultStylesheet + "<body>" + ggf.render + gga.render + ggi.render + ggr.render + "</body></html>")

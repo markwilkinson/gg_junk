@@ -59,10 +59,10 @@ module Viz
 	  
 	  def render(width = 200, height = 200)
 htmlout = <<END
-<div id="div#{self.id}">
+<div id="div#{self.id}" style="width: #{width+2}px; float: left">
 
-<svg id="#{self.id}" width="#{width}" height="#{height}"></svg><br/>
-<p style="text-align: center;">#{self.guagelabel}</p>
+<svg  id="#{self.id}" width="#{width}" height="#{height}"></svg><br/>
+<p style="font-size: 18px;text-align: center;">#{self.guagelabel}</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
