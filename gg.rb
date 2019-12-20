@@ -20,6 +20,7 @@ module Viz
 	  attr_accessor :majorTickStart
 	  attr_accessor :angleOffset
 	  attr_accessor :labelLocation
+	  attr_accessor :guagelabel
 	  attr_accessor :id
 	  attr_accessor :number
 	  
@@ -39,6 +40,7 @@ module Viz
 		  @majorTickStart= args.fetch(:majorTickStart, "0.85")
 		  @angleOffset= args.fetch(:angleOffset, "Math.PI/2")
 		  @labelLocation= args.fetch(:labelLocation, "0.68")
+		  @guagelabel= args.fetch(:guagelabel, "")
 		  @id = "svg#{@@ggid}"
 		  @number = @@ggid
 		  @@ggid +=1
@@ -57,7 +59,10 @@ module Viz
 	  
 	  def render(width = 200, height = 200)
 htmlout = <<END
-<svg id="#{self.id}" width="#{width}" height="#{height}"></svg>
+<div id="div#{self.id}">
+
+<svg id="#{self.id}" width="#{width}" height="#{height}"></svg><br/>
+<p style="text-align: center;">#{self.guagelabel}</p>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="http://vizjs.org/viz.v1.0.0.min.js"></script>
@@ -85,7 +90,7 @@ var guage#{self.number} = viz.gg()
 guage#{self.number}.defs(#{self.id}, #{self.number});
 frame#{self.number}.call(guage#{self.number});  
 </script>
-
+</div>
 END
 
 		return htmlout
@@ -93,6 +98,10 @@ END
 	  end
 	  
 	  
+	def self.defaultStylesheet
+		defaultStylesheet
+	end
+	
 	  def defaultStylesheet
 		
 		style = <<END
