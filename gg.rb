@@ -99,11 +99,7 @@ END
 	  
 	  
 	def self.defaultStylesheet
-		defaultStylesheet
-	end
-	
-	  def defaultStylesheet
-		
+
 		style = <<END
 <style>
 .label{
@@ -129,6 +125,13 @@ END
 
 END
 		return style
+
+
+	end
+	
+	  def defaultStylesheet
+		self.class.defaultStylesheet
+		
 	  end
 	  
 	  
